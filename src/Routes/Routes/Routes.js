@@ -38,5 +38,9 @@ export const routes = createBrowserRouter([
                 element: <Blog></Blog>
             },
         ]
+    },
+    {
+        path: '*',
+        element: <div className="fs-4 fw-bold text-center mt-5 shadow-lg w-75 mx-auto p-4">Please provide a valid URL!!!</div>
     }
 ]);
