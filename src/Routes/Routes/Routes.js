@@ -5,6 +5,8 @@ import Courses from "../../pages/Courses/Courses/Courses";
 import CourseDetails from "../../pages/CourseDetails/CourseDetails/CourseDetails";
 import Faq from "../../pages/Faq/Faq/Faq";
 import Blog from "../../pages/Blog/Blog/Blog";
+import SignUp from "../../pages/SignUp/SignUp";
+import SignIn from "../../pages/SignIn/SignIn";
 
 export const routes = createBrowserRouter([
     {
@@ -43,6 +45,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
+            },
+            {
+                path: '/signin',
+                element: <SignIn></SignIn>
             },
         ]
     },

@@ -20,9 +20,14 @@ const Home = () => {
                         </div>
                     </Col>
 
-                    <Col className='form-info p-4 rounded'>
+                    <Col className='form-info d-lg-block d-none p-4 rounded'>
                         <h2 className='text-center'>Sign Up</h2>
                         <Form className='form-content'>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Full Name</Form.Label>
+                                <Form.Control type="text" placeholder="Enter name" />
+                            </Form.Group>
+
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control type="email" placeholder="Enter email" />
@@ -33,6 +38,11 @@ const Home = () => {
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Confirm Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" />
                             </Form.Group>
 
