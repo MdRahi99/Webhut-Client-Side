@@ -1,0 +1,16 @@
+.row{
+    background-color: rgb(243, 246, 246);
+    padding: 80px 0px;
+}
+
+.home-info{
+    margin-top: 60px;
+}
+
+.form-info{
+    background-color: rgb(255, 254, 254);
+    margin: 0px 50px;
+}
+.form-content{
+    padding: 55px 50px;
+}
