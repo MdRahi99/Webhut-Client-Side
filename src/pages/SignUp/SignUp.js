@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import img from '../../home-img.jpg';
 import './SignUp.css';
 
 const SignUp = () => {
 
     const [error, setError] = useState('');
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile, verifyEmail} = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -26,19 +26,36 @@ const SignUp = () => {
             console.log(user);
             setError('');
             form.reset();
+            handleUpdateUserProfile(name, photoURL);
+            handleEmailVerification();
+            toast.success('Please verify your email address.')
         })
         .catch(error => {
             console.error(error);
             setError(error.message);
         });
     }
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+        .then(() => {})
+        .catch(error => console.error(error));
+    }
+
+    const handleEmailVerification = () => {
+        verifyEmail()
+        .then(() => {})
+        .catch(error => console.error(error));
+    }
+
     return (
         <div className='row signup-form container rounded my-4 shadow-lg'>
-        <div className='d-none d-lg-flex col-lg-5'>
-            <img className='signup-img rounded' src={img} alt="" />
-        </div>
             
-        <div className='col-12 col-lg-7'>
+        <div className='col-12 col-lg-7 mx-auto'>
             <Form onSubmit={handleSubmit} className='form-content rounded shadow-lg'>
                 <h2 className='text-center py-3 mb-3'>Sign Up</h2>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 import './SignIn.css';
-import img from '../../home-img.jpg'
 import {FaGoogle, FaGithub} from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
@@ -53,10 +52,7 @@ const SignIn = () => {
         <div className='signin-form container rounded my-4 shadow-lg p-4'>
             
         <div className='row'>
-            <div className='d-none d-lg-flex col-lg-5'>
-                <img className='signin-img rounded' src={img} alt="" />
-            </div>
-            <div className='col-12 col-lg-7'>
+            <div className='col-12 col-lg-7 mx-auto'>
                 <Form onSubmit={handleSubmit} className='form-content rounded shadow-lg'>
 
                 <h2 className='text-center py-2 mb-4 rounded'>Sign In</h2>
