@@ -7,9 +7,16 @@ import Image from 'react-bootstrap/Image';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { Button } from 'react-bootstrap';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+        .then(() => {})
+        .catch(error => console.error(error))
+    }
 
     return (
         <Navbar className='mb-4 sticky-top' collapseOnSelect expand="lg" bg="light" variant="light">
@@ -23,12 +30,22 @@ const Header = () => {
                         <Link className='link' to='/faq'>Faq</Link>
                         <Link className='link' to='/blogs'>Blogs</Link>
                     </Nav>
-                    <Nav className='d-flex '>
-                        <Link className='link btn btn-outline-info mb-2 mb-lg-0 me-lg-2' to="/signin">Sign In</Link>
-                        <Link className='link btn btn-outline-info' to="/signup">Sign Up</Link>
-                    </Nav>
                     <Nav>
-                        <Nav.Link>{user?.displayName}</Nav.Link>
+                        <Nav.Link>
+                            {
+                                user?.uid ? 
+                                <>
+                                    <span>{user?.displayName}</span>
+                                    <Button variant='light' onClick={handleLogOut}>Log Out</Button>
+                                </>
+                                :
+                                <>
+                                    <Link className='link btn btn-outline-info mb-2 mb-lg-0 me-lg-2' to={'/signin'}>Sign In</Link>
+                                    <Link className='link btn btn-outline-info' to="/signup">Sign Up</Link>
+                                </>
+                            }
+                        </Nav.Link>
+                        
                         <Nav.Link>
                             {user?.photoURL ?
                                 <Image
