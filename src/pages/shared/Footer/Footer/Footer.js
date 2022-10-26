@@ -4,8 +4,8 @@ import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-            <div class="card text-center bg-light variant-light">
-                <div class="card-footer">
+            <div className="card text-center bg-light variant-light">
+                <div className="card-footer">
                     <div className='d-flex justify-content-center gap-3 fs-3 py-3'>
                         <FaFacebook></FaFacebook>
                         <FaLinkedin></FaLinkedin>

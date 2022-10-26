@@ -1,28 +1,24 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import img from '../../../home-img.jpg';
+import DetailsSummary from '../../shared/DetailsSummary/DetailsSummary';
 import './Home.css';
 
 const Home = () => {
-    const coursesInfo = useLoaderData();
-
+    const allCourse = useLoaderData();
+    
     return (
         <div>
-            <Container className='mb-4'>
-                <Row className='home-info-row rounded shadow-sm'>
-                    <Col lg='7' sm='12' className='mx-auto'>
-                        <div className='home-info w-75 mx-auto'>
-                            <h2>Learn from the Expert</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
-                            <button className='rounded px-4 py-2 mt-3 btn btn-outline-info fw-semibold'>Explore</button>
-                        </div>
-                    </Col>
-
-                    <Col className='form-info d-lg-block d-none p-4 rounded'>
-                        <h2 className='text-center'>Sign Up</h2>
-                        <Form className='form-content'>
+            <Container className='my-4 row shadow-lg p-4'>
+                <div className='d-none d-lg-flex col-lg-5'>
+                    <img className='home-img rounded' src={img} alt="" />
+                </div>
+                <div className='col-12 col-lg-7'>
+                    <Form className='form-content shadow-lg'>
+                            <h2 className='text-center mb-4'>Sign Up</h2>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Full Name</Form.Label>
                                 <Form.Control type="text" placeholder="Enter name" />
@@ -49,24 +45,18 @@ const Home = () => {
                             <Button variant="outline-info fw-semibold" type="submit">
                                 Submit
                             </Button>
-                        </Form>
-                    </Col>
-                </Row>
+                    </Form>
+                </div>
             </Container>
 
-            <Container className='p-4 course-container rounded'>
-                <h4 className='text-center p-4'>Total Courses: {coursesInfo.length}</h4> 
-                <div className='row row-cols-1 row-cols-lg-4 justify-content-center gx-3 gy-4'>
-                    {
-                        coursesInfo.map(courses => 
-                        <div className='course-items col shadow-sm mx-4 rounded text-center' key={courses.id}>
-                            <img src={courses.img} alt="" rounded/>
-                            <h3 className='courses-name'>{courses.name}</h3>
-                            <Link className='course rounded-bottom p-2' to={`/courses/${courses.id}`}>Enter</Link>
-                            <p className='mt-2'>Total Chapter: <span className='fw-bold'>{courses.topics}</span></p>
-                        </div>)
-                    }
-                </div>
+            <Container>
+            <h2 className='w-100 text-center shadow-lg p-4 rounded'>Topics: {allCourse.length}</h2>
+                {
+                    allCourse.map(course => <DetailsSummary
+                        key={course._id}
+                        course={course}
+                    ></DetailsSummary>)
+                }
             </Container>
         </div>
     );

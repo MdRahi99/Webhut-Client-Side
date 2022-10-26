@@ -7,43 +7,15 @@
     margin-top: 60px;
 }
 
+.home-img{
+    width: 382px;
+    height: 578px;
+}
+
 .form-info{
     background-color: rgb(255, 254, 254);
     margin: 0px 50px;
 }
 .form-content{
     padding: 55px 50px;
-}
-
-.course-container{
-    margin: 30px 0px;
-    background-color: rgb(243, 246, 246);
-}
-.course-items{
-    padding: 30px 0px;
-    background-color: rgb(217, 221, 221);
-    position: relative;
-    height: 350px;
-}
-.course{
-    text-decoration: none;
-    width: 100%;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgb(171, 173, 172);
-}
-
-.course:hover{
-    background-color: rgb(134, 134, 134);
-    color: black;
-}
-
-.course-items img{
-    width: 285px;
-    height: 165px;
-    margin-bottom: 15px;
 }

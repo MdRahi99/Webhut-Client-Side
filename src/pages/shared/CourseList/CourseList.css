@@ -1,0 +1,8 @@
+.list-info{
+    position: relative;
+}
+.btn-link{
+    font-size: 25px;
+    position: absolute;
+    right: 0;
+}

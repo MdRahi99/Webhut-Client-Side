@@ -1,14 +1,19 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import img from '../../home-img.jpg';
 import './SignUp.css';
 
 const SignUp = () => {
     return (
-        <div className='signup-form container rounded my-4'>
-            <h2 className='text-center py-3 mb-3'>Sign Up</h2>
-        <div>
-            <Form className='form-content w-50 mx-auto rounded'>
+        <div className='row signup-form container rounded my-4 shadow-lg'>
+        <div className='d-none d-lg-flex col-lg-5'>
+            <img className='signup-img rounded' src={img} alt="" />
+        </div>
+            
+        <div className='col-12 col-lg-7'>
+            <Form className='form-content rounded shadow-lg'>
+                <h2 className='text-center py-3 mb-3'>Sign Up</h2>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Full Name</Form.Label>
                     <Form.Control type="text" placeholder="Enter name" />

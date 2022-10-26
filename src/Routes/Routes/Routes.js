@@ -2,11 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home/Home";
 import Courses from "../../pages/Courses/Courses/Courses";
-import CourseDetails from "../../pages/CourseDetails/CourseDetails/CourseDetails";
 import Faq from "../../pages/Faq/Faq/Faq";
 import Blog from "../../pages/Blog/Blog/Blog";
 import SignUp from "../../pages/SignUp/SignUp";
 import SignIn from "../../pages/SignIn/SignIn";
+import Category from "../../pages/Category/Category";
+import CourseDetails from "../../pages/CourseDetails/CourseDetails/CourseDetails";
 
 export const routes = createBrowserRouter([
     {
@@ -15,29 +16,25 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: async() => {
-                    return fetch('http://localhost:5000/courses-categories')
-                },
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: async() => fetch('http://localhost:5000/courses')
             },
             {
-                path: '/home',
-                loader: async() => {
-                    return fetch('http://localhost:5000/courses-categories')
-                },
-                element: <Home></Home>
+                path: '/category/:id',
+                element: <Category></Category>,
+                loader: async({params}) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
-                path: '/courses',
-                loader: async() => {
-                    return fetch('http://localhost:5000/courses-categories')
-                },
-                element: <Courses></Courses>
+                path: '/course',
+                element: <Courses></Courses>,
+                loader: async() => fetch('http://localhost:5000/courses')
             },
             {
                 path: '/courses/:id',
-                element: <CourseDetails></CourseDetails>
+                element: <CourseDetails></CourseDetails>,
+                loader: async({params}) => fetch(`http://localhost:5000/courses/${params.id}`) 
             },
+            // ..............................................
             {
                 path: '/faq',
                 element: <Faq></Faq>

@@ -3,14 +3,21 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 import './SignIn.css';
+import img from '../../home-img.jpg'
 import {FaGoogle, FaGithub} from 'react-icons/fa';
 
 const SignIn = () => {
     return (
-        <div className='signin-form container rounded my-4'>
-            <h2 className='text-center py-3 mb-3'>Sign In</h2>
-        <div className=''>
-            <Form className='form-content w-50 mx-auto rounded'>
+        <div className='signin-form container rounded my-4 shadow-lg p-4'>
+            
+        <div className='row'>
+            <div className='d-none d-lg-flex col-lg-5'>
+                <img className='signin-img rounded' src={img} alt="" />
+            </div>
+            <div className='col-12 col-lg-7'>
+                <Form className='form-content rounded shadow-lg'>
+
+                <h2 className='text-center py-2 mb-4 rounded'>Sign In</h2>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -36,7 +43,8 @@ const SignIn = () => {
                         <Button variant='outline-dark'><FaGithub></FaGithub> Login with Github</Button>
                     </ButtonGroup>
                 </div>
-            </Form>
+                </Form>
+            </div>
         </div>
 
         </div>
