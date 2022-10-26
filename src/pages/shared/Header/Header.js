@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import { FaUser } from 'react-icons/fa';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <Navbar className='mb-4 sticky-top' collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
@@ -22,6 +26,20 @@ const Header = () => {
                     <Nav className='d-flex '>
                         <Link className='link btn btn-outline-info mb-2 mb-lg-0 me-lg-2' to="/signin">Sign In</Link>
                         <Link className='link btn btn-outline-info' to="/signup">Sign Up</Link>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link>{user?.displayName}</Nav.Link>
+                        <Nav.Link>
+                            {user?.photoURL ?
+                                <Image
+                                    style={{ height: '30px' }}
+                                    roundedCircle
+                                    src={user?.photoURL}>
+                                </Image>
+                                : 
+                                <FaUser></FaUser>
+                            }
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
