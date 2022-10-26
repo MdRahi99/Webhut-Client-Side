@@ -31,12 +31,12 @@ const Header = () => {
                         <Link className='link' to='/blogs'>Blogs</Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link>
+                        <>
                             {
                                 user?.uid ? 
                                 <>
-                                    <span>{user?.displayName}</span>
                                     <Button variant='light' onClick={handleLogOut}>Log Out</Button>
+                                    <span>{user?.displayName}</span>
                                 </>
                                 :
                                 <>
@@ -44,9 +44,9 @@ const Header = () => {
                                     <Link className='link btn btn-outline-info' to="/signup">Sign Up</Link>
                                 </>
                             }
-                        </Nav.Link>
+                        </>
                         
-                        <Nav.Link>
+                        <Link className='ms-3'>
                             {user?.photoURL ?
                                 <Image
                                     style={{ height: '30px' }}
@@ -56,7 +56,7 @@ const Header = () => {
                                 : 
                                 <FaUser></FaUser>
                             }
-                        </Nav.Link>
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

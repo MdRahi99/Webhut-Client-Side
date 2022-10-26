@@ -16,10 +16,10 @@ const DetailsSummary = ({course}) => {
                     <Card.Text className='col-8 shadow-lg p-4 mx-2'>
                     {
                         details.length > 200 ? 
-                        <p>{details.slice(0,250) + '...'} 
-                        <Link to={`/courses/${_id}`}>Read More</Link></p>
+                        <>{details.slice(0,250) + '...'} 
+                        <Link to={`/courses/${_id}`}>Read More</Link></>
                         :
-                        <p>{details}</p>
+                        details
                     }
                     </Card.Text>
                     </div>
