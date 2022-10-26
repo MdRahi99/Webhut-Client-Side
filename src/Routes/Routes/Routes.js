@@ -8,6 +8,7 @@ import SignUp from "../../pages/SignUp/SignUp";
 import SignIn from "../../pages/SignIn/SignIn";
 import Category from "../../pages/Category/Category";
 import CourseDetails from "../../pages/CourseDetails/CourseDetails/CourseDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -31,7 +32,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses/:id',
-                element: <CourseDetails></CourseDetails>,
+                element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
                 loader: async({params}) => fetch(`http://localhost:5000/courses/${params.id}`) 
             },
             // ..............................................

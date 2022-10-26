@@ -7,12 +7,15 @@ import img from '../../home-img.jpg'
 import {FaGoogle, FaGithub} from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
     const [error, setError] = useState('');
     const { providerLogin } = useContext(AuthContext);
     const {signIn} = useContext(AuthContext);
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const navigate = useNavigate();
 
@@ -28,7 +31,7 @@ const SignIn = () => {
             console.log(user);
             form.reset();
             setError('');
-            navigate('/');
+            navigate(from, {replace: true});
         })
         .catch(error => {
             console.error(error);
