@@ -1,21 +1,11 @@
-.home-info-row{
-    background-color: rgb(243, 246, 246);
-    padding: 80px 0px;
+.home-h2{
+    box-shadow: 0px 0px 0px 3px;
+    padding: 15px;
 }
 
-.home-info{
-    margin-top: 60px;
-}
-
-.home-img{
-    width: 382px;
-    height: 578px;
-}
-
-.form-info{
-    background-color: rgb(255, 254, 254);
-    margin: 0px 50px;
-}
-.form-content{
-    padding: 55px 50px;
+.home-p{
+    box-shadow: 0px 3px 0px 0px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 400;
 }

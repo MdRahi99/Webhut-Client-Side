@@ -56,7 +56,7 @@ const SignUp = () => {
         <div className='row signup-form container rounded my-4 shadow-lg'>
             
         <div className='col-12 col-lg-7 mx-auto'>
-            <Form onSubmit={handleSubmit} className='form-content rounded shadow-lg'>
+            <Form onSubmit={handleSubmit} className='form-content rounded shadow-lg p-4'>
                 <h2 className='text-center py-3 mb-3'>Sign Up</h2>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Full Name</Form.Label>

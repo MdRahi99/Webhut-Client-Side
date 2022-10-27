@@ -19,6 +19,7 @@ const Courses = () => {
                     ></DetailsSummary>)
                 }
             </Container>
+
             <Container className='col-12 col-lg-5'>
                 <PremiumCourse></PremiumCourse>
             </Container>

@@ -61,11 +61,11 @@ const SignIn = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='signin-form container rounded my-4 shadow-lg p-4'>
+        <div className='signIn-form container rounded my-4 shadow-lg p-4'>
             
         <div className='row'>
-            <div className='col-12 col-lg-7 mx-auto'>
-                <Form onSubmit={handleSubmit} className='form-content rounded shadow-lg'>
+            <div className='col-12 col-lg-12 mx-auto'>
+                <Form onSubmit={handleSubmit} className='form-content rounded shadow-lg p-4 w-75 mx-auto'>
 
                 <h2 className='text-center py-2 mb-4 rounded'>Sign In</h2>
 
