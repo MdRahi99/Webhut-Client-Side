@@ -1,6 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import CourseList from '../shared/CourseList/CourseList';
+import { Link, useLoaderData } from 'react-router-dom';
 import DetailsSummary from '../shared/DetailsSummary/DetailsSummary';
 
 const Category = () => {
@@ -8,19 +7,18 @@ const Category = () => {
 
     return (
         <div className='row'>
-            <div className='col-4'>
-                <CourseList></CourseList>
-            </div>
 
-            <div className='col-8'>
+            <div className='col-12'>
                 {
                 coursesCategory.map( courses => <DetailsSummary
                         key={courses._id}
                         course={courses}
                 ></DetailsSummary>)
                 }
+                <div className='w-50 mx-auto my-4'>
+                <Link className='btn btn-dark w-100 mx-auto my-4 p-2 fs-3' to={'/course'}>Back</Link>
+                </div>
             </div>
-           <h3>Total Topic: {coursesCategory.length}</h3>
         </div>
     );
 };

@@ -7,7 +7,7 @@ const CourseDetails = () => {
     const {title, img, details, category_id} = course;
 
     return (
-        <div>
+        <div className='my-4'>
             <Card.Body>
                     <Card.Title className='shadow-lg p-4 rounded mb-3'>{title}</Card.Title>
                     <div className='row justify-content-center'>

@@ -14,3 +14,12 @@
 .courses-list:hover{
     color: black;
 }
+
+Card{
+    position: absolute;
+}
+.btnEnter{
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+}

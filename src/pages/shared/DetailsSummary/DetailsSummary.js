@@ -9,9 +9,11 @@ const DetailsSummary = ({course}) => {
     return (
         <div>
             <Card className='mb-5'>
-                <Card.Header></Card.Header>
                 <Card.Body>
-                    <Card.Title className='shadow-lg p-4 rounded mb-3'>{title}</Card.Title>
+                    <Card.Title className='shadow-lg p-4 rounded mb-3'>{title}
+
+                    </Card.Title>
+
                     <div className='row justify-content-center'>
                     <Card.Img className='col-4 w-25 d-none d-lg-flex shadow-lg p-4' variant='top' src={img}></Card.Img>
                     <Card.Text className='col-8 shadow-lg p-4 mx-2'>
