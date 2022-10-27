@@ -9,6 +9,7 @@ import SignIn from "../../pages/SignIn/SignIn";
 import Category from "../../pages/Category/Category";
 import CourseDetails from "../../pages/CourseDetails/CourseDetails/CourseDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Premium from "../../pages/shared/Premium/Premium";
 
 export const routes = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ export const routes = createBrowserRouter([
                 path: '/courses/:id',
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
                 loader: async({params}) => fetch(`https://webhut-server.vercel.app/courses/${params.id}`) 
+            },
+            {
+                path: '/premium/:id',
+                element: <PrivateRoute><Premium></Premium></PrivateRoute>
             },
             // ..............................................
             {

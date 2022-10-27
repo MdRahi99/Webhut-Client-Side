@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import './DetailsSummary.css';
 
 const DetailsSummary = ({course}) => {
     const {_id, details, title, img} = course;
@@ -17,14 +18,14 @@ const DetailsSummary = ({course}) => {
                     {
                         details.length > 200 ? 
                         <>{details.slice(0,250) + '...'} 
-                        <Link to={`/courses/${_id}`}>Read More</Link></>
+                            <Link className='readBtn ms-2 p-2 text-muted' to={`/courses/${_id}`}>Read More</Link>
+                        </>
                         :
                         details
                     }
                     </Card.Text>
                     </div>
                 </Card.Body>
-                <Card.Footer></Card.Footer>
             </Card>
         </div>
     );

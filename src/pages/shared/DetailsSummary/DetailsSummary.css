@@ -1,0 +1,7 @@
+.readBtn{
+    text-decoration: none;
+}
+.readBtn:hover{
+    color: black;
+    font-weight: bold;
+}
