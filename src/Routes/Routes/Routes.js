@@ -18,22 +18,22 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: async() => fetch('http://localhost:5000/courses')
+                loader: async() => fetch('https://webhut-server.vercel.app/courses')
             },
             {
                 path: '/category/:id',
                 element: <Category></Category>,
-                loader: async({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: async({params}) => fetch(`https://webhut-server.vercel.app/category/${params.id}`)
             },
             {
                 path: '/course',
                 element: <Courses></Courses>,
-                loader: async() => fetch('http://localhost:5000/courses')
+                loader: async() => fetch('https://webhut-server.vercel.app/courses')
             },
             {
                 path: '/courses/:id',
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
-                loader: async({params}) => fetch(`http://localhost:5000/courses/${params.id}`) 
+                loader: async({params}) => fetch(`https://webhut-server.vercel.app/courses/${params.id}`) 
             },
             // ..............................................
             {
