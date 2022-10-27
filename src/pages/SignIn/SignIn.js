@@ -6,7 +6,7 @@ import './SignIn.css';
 import {FaGoogle, FaGithub} from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
     const [error, setError] = useState('');
@@ -91,6 +91,9 @@ const SignIn = () => {
                         <Button onClick={handleGoogleSignIn} variant='outline-info'><FaGoogle></FaGoogle> Login with Google</Button>
                         <Button onClick={handleGithubSignIn} variant='outline-dark'><FaGithub></FaGithub> Login with Github</Button>
                     </ButtonGroup>
+                </div>
+                <div>
+                    <span>Create an Account <Link className='ms-2' to={'/signup'}>SignUp</Link></span>
                 </div>
                 </Form>
             </div>

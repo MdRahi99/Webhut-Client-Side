@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './SignUp.css';
 
@@ -85,6 +86,10 @@ const SignUp = () => {
                 <Form.Text className="text-danger">
                     {error}
                 </Form.Text>
+
+                <div>
+                    <span>Already have an account <Link className='ms-2' to={'/signin'}>SignIn</Link></span>
+                </div>
             </Form>
         </div>
         </div>

@@ -15,6 +15,7 @@ const Premium = () => {
             </div>
 
             <div className='col-12 col-lg-4'>
+
                 {
                     user?.uid ? 
                     <div className='shadow-lg p-4'>

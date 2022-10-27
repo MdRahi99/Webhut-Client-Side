@@ -19,7 +19,6 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: async() => fetch('https://webhut-server.vercel.app/courses')
             },
             {
                 path: '/category/:id',
@@ -61,6 +60,12 @@ export const routes = createBrowserRouter([
     },
     {
         path: '*',
-        element: <div className="fs-4 fw-bold text-center mt-5 shadow-lg w-75 mx-auto p-4">Please provide a valid URL!!!</div>
+        element: <Faq></Faq>
+    },
+    {
+        path: '*',
+        element: <div className="fs-4 fw-bold text-center my-4 shadow-lg w-75 mx-auto p-4">
+            <h1>Please provide a valid URL!!!</h1>
+        </div>
     }
 ]);

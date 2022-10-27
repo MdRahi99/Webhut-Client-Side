@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import { FaUser } from 'react-icons/fa';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
+import Form from 'react-bootstrap/Form';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
@@ -57,6 +58,14 @@ const Header = () => {
                                 <FaUser></FaUser>
                             }
                         </Link>
+
+                        <div class=" ms-3">
+                            <Form>
+                                <Form.Check 
+                                    type="switch"
+                                    id="custom-switch" />
+                            </Form>
+                        </div>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
